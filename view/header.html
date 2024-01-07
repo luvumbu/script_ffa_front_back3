@@ -1,0 +1,381 @@
+
+<strong>
+    <h1 class="text-center padding_text">
+    ATHLETISME
+</h1>
+</strong>
+<div class="display_flex_header_0 text-center bg_colors">
+            <div onclick="info_page(this)" title="get_club_nom_complet_array_2">
+               <h2>
+                <!--<img width="100" height="100" src="https://img.icons8.com/ios/100/gum-.png" alt="gum-"/>-->
+                <div>
+                    Clubs
+                </div>
+               </h2>
+            </div>
+        <div onclick="info_page(this)" title="get_users_nom_complet_array">
+            <h2>
+                <!--<img width="100" height="100" src="https://img.icons8.com/ios/100/ranners-crossing-finish-line.png" alt="ranners-crossing-finish-line"/>-->
+                <div>
+                    Athletes
+                </div>
+            </h2>
+        </div>
+        <div onclick="info_page(this)" title="get_result_villes_nom_array_2">
+            <h2>
+                <!--<img width="100" height="100" src="https://img.icons8.com/ios/100/city.png" alt="city"/>-->
+                <div>
+                    Villes
+                </div>
+            </h2>
+        </div>
+
+      
+<!--
+
+
+
+        <div onclick="info_page(this)" title="4">
+            <h2>
+                Login
+            </h2>
+        </div>-->
+</div>
+<div id="alleatoir_alphabet"></div>
+<div class="display_none" id="parent_recherche_name">
+        <div class="text-center recherche_name" onclick="info_page(this)" title="get_users_nom_complet_array">
+
+        <h2>
+            Recherche unique nom plus prenom
+        </h2>
+        <img width="50" height="50" src="https://img.icons8.com/ios/50/name--v1.png" alt="name--v1"/>
+    </div>
+
+    <div class="text-center recherche_name" onclick="info_page(this)" title="get_result_users_nom_1_array_2">
+
+        <h2>
+            Recherche par Nom  
+        </h2>
+        <img width="50" height="50" src="https://img.icons8.com/ios/50/name--v1.png" alt="name--v1"/>
+    </div>
+</div>
+
+
+<div title="get_users_nom_complet_array" id="div_man" ></div>
+<div title="get_users_nom_complet_array" id="div_woman"></div>
+<div title="get_club_nom_complet_array_2" id="div_club"></div>
+<div title="get_result_villes_nom_array_2" id="div_ville"></div>
+ 
+<style>
+    #div_man, #div_woman,#div_club ,#div_ville {
+     width:50%;
+     margin: auto;
+     margin-top:50px; 
+    }
+    #div_man div {
+         background-image: url("src/img/x1.jpg");
+        padding: 15px;
+    }
+    #div_ville div {
+        background-image: url("src/img/x1.jpg");
+        padding: 15px;
+    }
+    #div_woman div {
+        background-image: url("src/img/x2.jpg");
+   
+        padding: 15px;
+    }
+    #div_club div {
+ 
+   
+   padding: 15px;
+    }
+    :root {
+  --blue: #1e90ff;
+  --bg_colors: #ad3117;
+  --colors_1: white;
+}
+
+    .bg_colors{
+        background-color: var(--bg_colors) ; 
+        color: var(--colors_1);
+    }
+    .display_none{
+        display:none ; 
+    }
+    .parent_recherche_name{
+        margin-top : 100px; 
+        display:flex ; 
+        justify-content: space-around;
+    }
+    .parent_recherche_name div{
+padding:15px; 
+border-radius:5px; 
+    }
+    .parent_recherche_name div:hover{
+        cursor: pointer;
+background-color:rgba(0,0,0,0.3) ; 
+
+    }
+    .padding_text{
+        padding:15px; 
+    }
+    .display_flex_header_0{
+        display:flex; 
+        justify-content: space-around;
+ 
+    }
+    .display_flex_header_0 div:hover{
+ 
+      cursor:pointer ; 
+    }
+    .display_flex_header_0 div{
+width:100%;
+padding:10px; 
+transition:1s all ; 
+
+    }
+    .div_recherche{
+        background-color:black ; 
+        color:white ; 
+        text-align: center;
+        margin-bottom:5px ; 
+        width:100% ;
+  
+    }
+</style>
+
+<script>
+var get_users_nom_complet_array = false ; 
+    var recherche_doc ="get_club_nom_complet_array_2" ; 
+    function info_page(_this){
+   
+recherche_doc = _this.title ; 
+
+
+switch (recherche_doc) {
+
+    case "get_club_nom_complet_array_2":
+    case "get_result_villes_nom_array_2":  
+    case "get_result_users_nom_1_array_2":
+
+ 
+    document.getElementById("div_input").className="div_input" ; 
+    document.getElementById("parent_recherche_name").className="display_none" ; 
+    break;
+    case "get_users_nom_complet_array": 
+
+            if(get_users_nom_complet_array==false){
+                document.getElementById("div_input").className="display_none" ; 
+                document.getElementById("parent_recherche_name").className="parent_recherche_name" ; 
+                get_users_nom_complet_array = true  ; 
+            }
+            else {
+                document.getElementById("div_input").className="div_input" ; 
+                document.getElementById("parent_recherche_name").className="display_none" ; 
+                get_users_nom_complet_array = false  ; 
+
+            }
+    break;
+ 
+ 
+ 
+}
+ 
+    }
+
+
+ 
+</script>
+
+
+
+
+
+<!--
+
+
+    SECTION en bas
+-->
+
+
+ 
+
+
+
+<div class="display_none" id="div_input">
+    <input type="text" id="fname" name="fname" onkeyup="showHint(this)" class="input_1">
+
+ <style>
+ 
+.input_1{
+    width:100%;
+   
+  
+    margin-top:50px; 
+    padding:5px;
+    margin:auto ; 
+}
+.div_input{
+width:80%;
+margin:auto ; 
+margin-top:100px ; 
+border:1px solid rgba(0,0,0,0.3) ; 
+}
+ </style>
+
+
+
+<div id="txtHint"></div>
+
+
+<script>
+
+    var resultat_recherche = "get_result_users_nom_1_array_2" ;
+
+
+var path_ = "script_all/get_result_users_nom_1_array_2/a.php";
+
+    function showHint(str) {
+
+        str=    str.value;
+var premier_lettre_recherche = str[0] ; 
+
+
+ path_ = "script_all/"+recherche_doc+"/"+premier_lettre_recherche+".php";
+  if (str.length == 0) {
+    document.getElementById("txtHint").innerHTML = "";
+    return;
+  } else {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("txtHint").innerHTML = this.responseText;
+        
+      }
+      console.log(path_+"?q="+str) ; 
+    }
+    xmlhttp.open("GET", path_+"?q="+str, true);
+    xmlhttp.send();
+  }
+}
+</script>
+
+
+
+</div>
+
+
+<script>
+
+    function onclick_recherche(_this){
+     
+ 
+
+     const myTimeout = setTimeout(x, 200);
+
+                function x() {
+                    window.location.href = "model/class/php/data/"+recherche_doc+".php/"+_this;
+                }
+
+
+
+       
+    }
+
+
+
+
+    
+   </script>
+
+
+  <script>
+
+    var alphab=[
+ 
+"SISSOKO Fode (MLI)",
+"LUVUMBU Ndenga (ANG)",
+
+"BAALA Mehdi",
+"DOUCOURE Ladji"
+    ]
+
+    var alphab2=[
+"ARRON Christine",
+"BAILLY Margot",
+"ARRON Christine",
+"ARRON Christine",
+"ARRON Christine"
+ 
+    ]
+
+    var alphab3=[
+"Lille Metropole Athletisme*",
+"Clll Armentieres",
+"Rc Arras*",
+"Bordeaux Athle*",
+"Toucan Athletic Club"
+ 
+    ]
+
+
+
+
+    var alphab4=[
+"Agen",
+"Arras",
+"Bordeaux",
+"Marseille",
+"Paris"
+ 
+    ]
+ 
+ var alleatoir_alphabet = parseInt(Math.random()*4) ; 
+
+ 
+
+ 
+
+Ajax("div_man","script_all/get_users_nom_complet_array/"+alphab[alleatoir_alphabet][0].toLowerCase()+".php?q="+alphab[alleatoir_alphabet]);
+Ajax("div_woman","script_all/get_users_nom_complet_array/"+alphab2[alleatoir_alphabet][0].toLowerCase()+".php?q="+alphab2[alleatoir_alphabet]);
+Ajax("div_club","script_all/get_club_nom_complet_array_2/"+alphab3[alleatoir_alphabet][0].toLowerCase()+".php?q="+alphab3[alleatoir_alphabet]);
+Ajax("div_ville","script_all/get_result_villes_nom_array_2/"+alphab4[alleatoir_alphabet][0].toLowerCase()+".php?q="+alphab4[alleatoir_alphabet]);
+ 
+
+var div_man = document.getElementById("div_man"); 
+ 
+
+
+const myTimeout = setTimeout(myGreeting, 1000);
+
+function myGreeting() {
+  
+
+    document.getElementById("div_man").setAttribute("onclick", "onclick_recherche2(this)");
+    document.getElementById("div_woman").setAttribute("onclick", "onclick_recherche2(this)");
+    document.getElementById("div_club").setAttribute("onclick", "onclick_recherche2(this)");
+    document.getElementById("div_ville").setAttribute("onclick", "onclick_recherche2(this)");
+
+ 
+}
+
+ 
+
+function onclick_recherche2(_this){
+    
+    recherche_doc = _this.title ; 
+
+ 
+    //window.location.href = "model/class/php/data/"+recherche_doc+".php/"+_this;
+     
+ 
+       
+    }
+
+
+ 
+ 
+   </script>
+   
